@@ -1,0 +1,6 @@
+target/
+.env
+_LEEME_*.md
+.idea/
+.vscode/
+*.iml
