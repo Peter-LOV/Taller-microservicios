@@ -9,7 +9,7 @@ Sistema distribuido con **Spring Boot**, **Eureka**, **Spring Cloud Gateway** y 
 
 | Integrante | Rol | Carpeta / archivos |
 |---|---|---|
-| <!-- Peter Orrala --> | A · Infraestructura, PostgreSQL y Eureka | `docker/`, `Dockerfile`, `docker-compose.yml`, `eureka-server/` |
+| Peter Orrala | A · Infraestructura, PostgreSQL y Eureka | `docker/`, `Dockerfile`, `docker-compose.yml`, `eureka-server/` |
 | <!-- completar nombre --> | B · Persistencia y catálogo | `db-routing/`, `servicio-catalogo/` |
 | <!-- completar nombre --> | C · Pedidos y Gateway | `servicio-pedidos/`, `api-gateway/` |
 | <!-- completar nombre --> | D · Pruebas y documentación | `scripts/`, `docs/`, `requests.http`, `README.md` |
@@ -17,7 +17,7 @@ Sistema distribuido con **Spring Boot**, **Eureka**, **Spring Cloud Gateway** y 
 ## Estado
 
 - [x] Estructura base
-- [ ] A · Infraestructura y Eureka
+- [x] A · Infraestructura y Eureka
 - [ ] B · db-routing y catálogo
 - [ ] C · Pedidos y Gateway
 - [ ] D · Pruebas y documentación
