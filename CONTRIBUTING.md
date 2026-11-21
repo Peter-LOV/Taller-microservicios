@@ -29,7 +29,7 @@ Formato: `tipo(ámbito): resumen en minúsculas, en presente, sin punto final` (
 
 | Parte | Rama | Responsable | Carpetas / archivos |
 |---|---|---|---|
-| Integrante A | `feature/infra-bd-eureka` | <!-- nombre --> | `Dockerfile`, `docker-compose.yml`, `docker/`, `eureka-server/` |
+| Peter Orrala | `feature/infra-bd-eureka` | <!-- nombre --> | `Dockerfile`, `docker-compose.yml`, `docker/`, `eureka-server/` |
 | Integrante B | `feature/persistencia-catalogo` | <!-- nombre --> | `db-routing/`, `servicio-catalogo/` |
 | Integrante C | `feature/pedidos-gateway` | <!-- nombre --> | `api-gateway/`, `servicio-pedidos/` |
 | Integrante D | `feature/pruebas-docs` | <!-- nombre --> | `README.md`, `docs/`, `requests.http`, `scripts/` |
