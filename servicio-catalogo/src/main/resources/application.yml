@@ -1,0 +1,47 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: servicio-catalogo
+
+app:
+  instance-id: ${INSTANCE_ID:local}
+  db:
+    base-path: /catalogo            # ruta del endpoint /catalogo/db/estado
+    username: ${DB_USER:catalogo_user}
+    password: ${DB_PASSWORD:}
+    schema: catalogo
+    application-name: ${spring.application.name}-${INSTANCE_ID:local}
+    health-interval-ms: 2000
+    healthy-after-successes: 2
+    require-streaming: true
+    primary:
+      name: primary
+      url: jdbc:postgresql://${DB_PRIMARY_HOST:localhost}:${DB_PRIMARY_PORT:5437}/${DB_NAME:laboratorio}
+    replicas:
+      - name: replica1
+        url: jdbc:postgresql://${DB_REPLICA1_HOST:localhost}:${DB_REPLICA1_PORT:5438}/${DB_NAME:laboratorio}
+      - name: replica2
+        url: jdbc:postgresql://${DB_REPLICA2_HOST:localhost}:${DB_REPLICA2_PORT:5439}/${DB_NAME:laboratorio}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    registry-fetch-interval-seconds: 3
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${INSTANCE_ID:local}
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 6
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    com.taller: INFO
