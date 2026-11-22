@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    loadbalancer:
+      cache:
+        ttl: 3s            # refresca la lista de instancias cada 3 s (por defecto 35 s)
+    gateway:
+      # Spring Cloud 2025.0 renombro el prefijo; se declaran ambos y el que no aplique se ignora.
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+      server:
+        webflux:
+          httpclient:
+            connect-timeout: 1000
+            response-timeout: 5s
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    registry-fetch-interval-seconds: 3
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${INSTANCE_ID:local}
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 6
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    com.taller: INFO
