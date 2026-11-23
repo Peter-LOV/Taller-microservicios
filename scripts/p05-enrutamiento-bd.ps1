@@ -11,14 +11,14 @@ $lecturas = 1..30 | ForEach-Object { [pscustomobject]@{ Nodo = (Invoke-Api -Url 
 Show-Dist $lecturas 'Nodo'
 
 '--- Estado de los nodos segun la aplicacion (/db/estado)'
-(Invoke-Api -Url "$Gw/api/catalogo/db/estado").Body.nodos | Format-Table nombre, rol, saludable, clusterNameReportado -AutoSize
+(Invoke-Api -Url "$Gw/api/catalogo/db/estado").Body.nodos | Format-Table nombre, rol, saludable, clusterNameReportado -AutoSize | Out-String -Width 250
 
 '--- Registros de la aplicacion: nodo y SQL de cada operacion'
-docker compose logs --tail=80 catalogo-1 catalogo-2 | Select-String '\[DB\] ' | Select-Object -Last 12
+docker compose logs --tail=80 catalogo-1 catalogo-2 | Select-String '\[DB\] ' | Select-Object -Last 12 | Out-String -Width 250
 
 '--- Verificacion en PostgreSQL: conexiones de la aplicacion por nodo (pg_stat_activity)'
 foreach ($n in 'primary', 'replica1', 'replica2') {
     "[$n]"
-    docker compose exec -T $n psql -U $AdminUser -d $Db -At -c "SELECT application_name, count(*) FROM pg_stat_activity WHERE application_name LIKE 'servicio-%' GROUP BY 1 ORDER BY 1;"
+    docker compose exec -T $n psql -U $AdminUser -d $Db -At -c "SELECT application_name, count(*) FROM pg_stat_activity WHERE application_name LIKE 'servicio-%' GROUP BY 1 ORDER BY 1;" | Out-String -Width 250
 }
 Stop-Transcript | Out-Null
