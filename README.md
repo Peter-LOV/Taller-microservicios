@@ -4,8 +4,16 @@ Sistema de **tienda en línea** con dos microservicios de negocio (`servicio-cat
 **Spring Boot 3.5 + Spring Cloud 2025.0**, con **Eureka** (descubrimiento), **Spring Cloud Gateway** (entrada y balanceo)
 y **PostgreSQL 17 replicado** (1 primario + 2 réplicas) con enrutamiento propio de lecturas y escrituras.
 
-- **Equipo:** <!-- completar: nombres de los 4 integrantes -->
-- **Video demostrativo:** <!-- completar: enlace público -->
+**Equipo**
+
+| Integrante | Parte | Responsabilidad |
+|---|---|---|
+| Peter Orrala Villón | A | Infraestructura, PostgreSQL replicado y Eureka |
+| Ismael Anchundia Catuto | B | Persistencia (db-routing) y servicio-catalogo |
+| Amy Tomala Silvestre | C | servicio-pedidos y Spring Cloud Gateway |
+| Skay Alvarado Rodriguez | D | Pruebas P01–P08, evidencias y documentación |
+
+**Video demostrativo:** pendiente <!-- completar: enlace público -->
 
 ## 1. Arquitectura
 
