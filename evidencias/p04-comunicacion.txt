@@ -1,0 +1,54 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261123002034
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Stock del producto 2 ANTES : 194
+--- Caso exitoso: POST /api/pedidos (producto 2, cantidad 3)
+HTTP 201 | pedido=17 total=58.50 | atendido por pedidos-1 | reserva hecha por catalogo=catalogo-2 | nodoBd=primary
+Stock del producto 2 DESPUES: 191  (debe haber bajado en 3)
+--- Varios pedidos: observe como catalogo-1 y catalogo-2 se alternan
+  pedido 18 -> reserva por catalogo-1
+  pedido 19 -> reserva por catalogo-2
+  pedido 20 -> reserva por catalogo-1
+  pedido 21 -> reserva por catalogo-2
+  pedido 22 -> reserva por catalogo-1
+  pedido 23 -> reserva por catalogo-2
+--- Error controlado 1: producto inexistente
+PS>ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (404) No se encontró."
+HTTP 404 -> {"error":"El producto 9999 no existe"}
+--- Error controlado 2: stock insuficiente
+PS>ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (409) Conflicto."
+HTTP 409 -> {"error":"Stock insuficiente para el producto 1"}
+--- Trazas de la aplicacion (llamada pedidos -> catalogo)
+
+pedidos-1  | 2026-11-23T05:12:46.116Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-5] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:12:46.208Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-7] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:12:46.294Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-6] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:12:46.384Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-8] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:14:23.750Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-2] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=3 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:14:25.808Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-5] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=3 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.137Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-8] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=2 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.313Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-1] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.373Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-2] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.415Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-3] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.503Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-4] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-2 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.600Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-5] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-1 (intento 1)
+pedidos-1  | 2026-11-23T05:20:35.698Z  INFO 1 --- [servicio-pedidos] [nio-8080-exec-7] com.taller.pedidos.CatalogoClient        : [CATALOGO] reserva OK producto=1 atendida por instancia=catalogo-2 (intento 1)
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261123002036
+**********************

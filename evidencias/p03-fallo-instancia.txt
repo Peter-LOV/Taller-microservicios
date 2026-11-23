@@ -1,0 +1,194 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261122232933
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+  0,0s antes    HTTP 200 catalogo-1  592 ms
+  1,0s antes    HTTP 200 catalogo-2  692 ms
+  2,1s antes    HTTP 200 catalogo-1  107 ms
+  2,5s antes    HTTP 200 catalogo-2  148 ms
+  3,0s antes    HTTP 200 catalogo-1  120 ms
+  3,4s antes    HTTP 200 catalogo-1  73 ms
+  3,8s antes    HTTP 200 catalogo-2  52 ms
+  4,2s antes    HTTP 200 catalogo-1  44 ms
+  4,5s antes    HTTP 200 catalogo-2  40 ms
+  4,9s antes    HTTP 200 catalogo-1  35 ms
+  5,3s antes    HTTP 200 catalogo-2  59 ms
+  5,6s antes    HTTP 200 catalogo-1  62 ms
+  6,0s antes    HTTP 200 catalogo-2  40 ms
+  6,4s antes    HTTP 200 catalogo-1  34 ms
+  6,7s antes    HTTP 200 catalogo-1  39 ms
+  7,1s antes    HTTP 200 catalogo-2  123 ms
+  7,5s antes    HTTP 200 catalogo-1  42 ms
+  7,9s antes    HTTP 200 catalogo-2  35 ms
+  8,2s antes    HTTP 200 catalogo-1  54 ms
+  8,6s antes    HTTP 200 catalogo-2  35 ms
+  9,0s antes    HTTP 200 catalogo-1  53 ms
+  9,3s antes    HTTP 200 catalogo-2  46 ms
+  9,7s antes    HTTP 200 catalogo-1  35 ms
+[ 10,0s] >>> docker compose stop catalogo-2
+ 10,0s durante  HTTP 200 catalogo-2  40 ms
+ 10,4s durante  HTTP 200 catalogo-1  40 ms
+ 10,8s durante  HTTP 200 catalogo-2  40 ms
+ 11,2s durante  HTTP 200 catalogo-1  42 ms
+ 11,5s durante  HTTP 200 catalogo-2  60 ms
+ 11,9s durante  HTTP 200 catalogo-1  40 ms
+ 12,2s durante  HTTP 200 catalogo-2  85 ms
+ 12,6s durante  HTTP 200 catalogo-1  48 ms
+ 13,0s durante  HTTP 200 catalogo-1  121 ms
+ 13,4s durante  HTTP 200 catalogo-1  529 ms
+ 14,3s durante  HTTP 200 catalogo-1  86 ms
+ 14,7s durante  HTTP 200 catalogo-1  80 ms
+ 15,1s durante  HTTP 200 catalogo-1  153 ms
+ 15,6s durante  HTTP 200 catalogo-1  238 ms
+ 16,1s durante  HTTP 200 catalogo-1  626 ms
+ 17,1s durante  HTTP 200 catalogo-1  102 ms
+ 17,5s durante  HTTP 200 catalogo-1  107 ms
+ 17,9s durante  HTTP 200 catalogo-1  263 ms
+ 18,5s durante  HTTP 200 catalogo-1  44 ms
+ 18,8s durante  HTTP 200 catalogo-1  267 ms
+ 19,4s durante  HTTP 200 catalogo-1  76 ms
+ 19,8s durante  HTTP 200 catalogo-1  131 ms
+ 20,3s durante  HTTP 200 catalogo-1  40 ms
+ 20,6s durante  HTTP 200 catalogo-1  32 ms
+ 21,0s durante  HTTP 200 catalogo-1  34 ms
+ 21,4s durante  HTTP 200 catalogo-1  61 ms
+ 21,7s durante  HTTP 200 catalogo-1  56 ms
+ 22,1s durante  HTTP 200 catalogo-1  44 ms
+ 22,5s durante  HTTP 200 catalogo-1  33 ms
+ 22,8s durante  HTTP 200 catalogo-1  28 ms
+ 23,2s durante  HTTP 200 catalogo-1  48 ms
+ 23,5s durante  HTTP 200 catalogo-1  28 ms
+ 23,9s durante  HTTP 200 catalogo-1  35 ms
+ 24,2s durante  HTTP 200 catalogo-1  42 ms
+ 24,6s durante  HTTP 200 catalogo-1  35 ms
+ 24,9s durante  HTTP 200 catalogo-1  41 ms
+ 25,3s durante  HTTP 200 catalogo-1  34 ms
+ 25,6s durante  HTTP 200 catalogo-1  71 ms
+ 26,0s durante  HTTP 200 catalogo-1  43 ms
+ 26,4s durante  HTTP 200 catalogo-1  59 ms
+ 26,8s durante  HTTP 200 catalogo-1  109 ms
+ 27,2s durante  HTTP 200 catalogo-1  77 ms
+ 27,6s durante  HTTP 200 catalogo-1  40 ms
+ 27,9s durante  HTTP 200 catalogo-1  36 ms
+ 28,3s durante  HTTP 200 catalogo-1  27 ms
+ 28,6s durante  HTTP 200 catalogo-1  207 ms
+ 29,1s durante  HTTP 200 catalogo-1  70 ms
+ 29,5s durante  HTTP 200 catalogo-1  42 ms
+ 29,9s durante  HTTP 200 catalogo-1  31 ms
+ 30,2s durante  HTTP 200 catalogo-1  36 ms
+ 30,6s durante  HTTP 200 catalogo-1  28 ms
+ 30,9s durante  HTTP 200 catalogo-1  45 ms
+ 31,3s durante  HTTP 200 catalogo-1  38 ms
+ 31,6s durante  HTTP 200 catalogo-1  36 ms
+ 32,0s durante  HTTP 200 catalogo-1  45 ms
+ 32,3s durante  HTTP 200 catalogo-1  63 ms
+ 32,7s durante  HTTP 200 catalogo-1  31 ms
+ 33,1s durante  HTTP 200 catalogo-1  21 ms
+ 33,4s durante  HTTP 200 catalogo-1  26 ms
+ 33,7s durante  HTTP 200 catalogo-1  23 ms
+ 34,1s durante  HTTP 200 catalogo-1  23 ms
+ 34,4s durante  HTTP 200 catalogo-1  29 ms
+ 34,7s durante  HTTP 200 catalogo-1  21 ms
+[ 35,1s] >>> docker compose start catalogo-2
+ 35,1s despues  HTTP 200 catalogo-1  31 ms
+ 35,5s despues  HTTP 200 catalogo-1  26 ms
+ 35,8s despues  HTTP 200 catalogo-1  30 ms
+ 36,2s despues  HTTP 200 catalogo-1  28 ms
+ 36,5s despues  HTTP 200 catalogo-1  36 ms
+ 36,9s despues  HTTP 200 catalogo-1  24 ms
+ 37,2s despues  HTTP 200 catalogo-1  28 ms
+ 37,5s despues  HTTP 200 catalogo-1  30 ms
+ 37,9s despues  HTTP 200 catalogo-1  38 ms
+ 38,2s despues  HTTP 200 catalogo-1  27 ms
+ 38,6s despues  HTTP 200 catalogo-1  33 ms
+ 38,9s despues  HTTP 200 catalogo-1  35 ms
+ 39,3s despues  HTTP 200 catalogo-1  48 ms
+ 39,6s despues  HTTP 200 catalogo-1  48 ms
+ 40,0s despues  HTTP 200 catalogo-1  24 ms
+ 40,3s despues  HTTP 200 catalogo-1  33 ms
+ 40,7s despues  HTTP 200 catalogo-1  27 ms
+ 41,0s despues  HTTP 200 catalogo-1  71 ms
+ 41,4s despues  HTTP 200 catalogo-1  66 ms
+ 41,8s despues  HTTP 200 catalogo-1  224 ms
+ 42,3s despues  HTTP 200 catalogo-1  41 ms
+ 42,7s despues  HTTP 200 catalogo-1  56 ms
+ 43,1s despues  HTTP 200 catalogo-1  49 ms
+ 43,4s despues  HTTP 200 catalogo-1  52 ms
+ 43,8s despues  HTTP 200 catalogo-1  33 ms
+ 44,1s despues  HTTP 200 catalogo-1  32 ms
+ 44,5s despues  HTTP 200 catalogo-1  28 ms
+ 44,8s despues  HTTP 200 catalogo-1  45 ms
+ 45,2s despues  HTTP 200 catalogo-1  38 ms
+ 45,6s despues  HTTP 200 catalogo-1  59 ms
+ 45,9s despues  HTTP 200 catalogo-1  35 ms
+ 46,3s despues  HTTP 200 catalogo-1  36 ms
+ 46,7s despues  HTTP 200 catalogo-1  35 ms
+ 47,0s despues  HTTP 200 catalogo-1  96 ms
+ 47,4s despues  HTTP 200 catalogo-1  81 ms
+ 47,8s despues  HTTP 200 catalogo-1  64 ms
+ 48,2s despues  HTTP 200 catalogo-1  43 ms
+ 48,5s despues  HTTP 200 catalogo-1  61 ms
+ 48,9s despues  HTTP 200 catalogo-1  68 ms
+ 49,3s despues  HTTP 200 catalogo-1  40 ms
+ 49,7s despues  HTTP 200 catalogo-1  36 ms
+ 50,0s despues  HTTP 200 catalogo-1  65 ms
+ 50,4s despues  HTTP 200 catalogo-1  39 ms
+ 50,7s despues  HTTP 200 catalogo-1  40 ms
+ 51,1s despues  HTTP 200 catalogo-1  70 ms
+ 51,5s despues  HTTP 200 catalogo-1  36 ms
+ 51,8s despues  HTTP 200 catalogo-1  32 ms
+ 52,2s despues  HTTP 200 catalogo-1  28 ms
+ 52,5s despues  HTTP 200 catalogo-1  27 ms
+ 52,9s despues  HTTP 200 catalogo-1  21 ms
+ 53,2s despues  HTTP 200 catalogo-1  26 ms
+ 53,5s despues  HTTP 200 catalogo-2  37 ms
+ 53,9s despues  HTTP 200 catalogo-1  26 ms
+ 54,3s despues  HTTP 200 catalogo-2  29 ms
+ 54,6s despues  HTTP 200 catalogo-1  17 ms
+ 54,9s despues  HTTP 200 catalogo-2  27 ms
+ 55,3s despues  HTTP 200 catalogo-1  24 ms
+ 55,6s despues  HTTP 200 catalogo-2  27 ms
+ 55,9s despues  HTTP 200 catalogo-1  27 ms
+ 56,3s despues  HTTP 200 catalogo-2  22 ms
+ 56,6s despues  HTTP 200 catalogo-1  19 ms
+ 57,0s despues  HTTP 200 catalogo-2  25 ms
+ 57,3s despues  HTTP 200 catalogo-1  24 ms
+ 57,6s despues  HTTP 200 catalogo-2  31 ms
+ 58,0s despues  HTTP 200 catalogo-1  17 ms
+ 58,3s despues  HTTP 200 catalogo-2  28 ms
+ 58,7s despues  HTTP 200 catalogo-1  18 ms
+ 59,0s despues  HTTP 200 catalogo-2  27 ms
+ 59,3s despues  HTTP 200 catalogo-1  21 ms
+ 59,7s despues  HTTP 200 catalogo-1  20 ms
+
+================ RESUMEN ================
+--- antes : 23 solicitudes, errores = 0
+  catalogo-1       13  (57 %)
+  catalogo-2       10  (43 %)
+--- durante : 63 solicitudes, errores = 0
+  catalogo-1       59  (94 %)
+  catalogo-2        4  (6 %)
+--- despues : 70 solicitudes, errores = 0
+  catalogo-1       61  (87 %)
+  catalogo-2        9  (13 %)
+Sin errores observados durante la prueba.
+catalogo-2 vuelve a atender solicitudes en t=53.5s (a 18.5 s de arrancarla)
+Verifique tambien el panel de Eureka: http://localhost:8761
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261122233033
+**********************
