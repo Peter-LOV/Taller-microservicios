@@ -1,0 +1,39 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261123002028
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== Instancias registradas en Eureka (http://localhost:8761) ===
+
+Servicio          InstanceId                   IP         Puerto Estado
+--------          ----------                   --         ------ ------
+SERVICIO-PEDIDOS  servicio-pedidos:pedidos-1   172.26.0.5   8080 UP    
+API-GATEWAY       api-gateway:local            172.26.0.3   8080 UP    
+SERVICIO-CATALOGO servicio-catalogo:catalogo-1 172.26.0.7   8080 UP    
+SERVICIO-CATALOGO servicio-catalogo:catalogo-2 172.26.0.6   8080 UP
+=== Localizacion por nombre logico a traves del Gateway (lb://) ===
+GET /api/catalogo/info -> HTTP 200 servicio=servicio-catalogo instancia=catalogo-1 host=fe1fbc41aecb
+GET /api/catalogo/info -> HTTP 200 servicio=servicio-catalogo instancia=catalogo-2 host=6e2debbb85bd
+GET /api/catalogo/info -> HTTP 200 servicio=servicio-catalogo instancia=catalogo-1 host=fe1fbc41aecb
+GET /api/catalogo/info -> HTTP 200 servicio=servicio-catalogo instancia=catalogo-2 host=6e2debbb85bd
+GET /api/pedidos/info -> HTTP 200 servicio=servicio-pedidos instancia=pedidos-1 host=7e7e4e0aa656
+GET /api/pedidos/info -> HTTP 200 servicio=servicio-pedidos instancia=pedidos-1 host=7e7e4e0aa656
+GET /api/pedidos/info -> HTTP 200 servicio=servicio-pedidos instancia=pedidos-1 host=7e7e4e0aa656
+GET /api/pedidos/info -> HTTP 200 servicio=servicio-pedidos instancia=pedidos-1 host=7e7e4e0aa656
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261123002029
+**********************

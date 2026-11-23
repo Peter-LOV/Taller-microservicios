@@ -9,7 +9,7 @@ $filas = foreach ($a in @($apps.applications.application)) {
         [pscustomobject]@{ Servicio = $a.name; InstanceId = $i.instanceId; IP = $i.ipAddr; Puerto = $i.port.'$'; Estado = $i.status }
     }
 }
-$filas | Format-Table -AutoSize
+$filas | Format-Table -AutoSize | Out-String -Width 250
 
 '=== Localizacion por nombre logico a traves del Gateway (lb://) ==='
 foreach ($ruta in 'catalogo', 'pedidos') {

@@ -1,0 +1,44 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261123002101
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+--- >>> docker compose start replica1
+  0,0s replica1 saludable=False The connection attempt failed.
+  2,1s replica1 saludable=False The connection attempt failed.
+  4,1s replica1 saludable=False The connection attempt failed.
+  6,1s replica1 saludable=False The connection attempt failed.
+  8,2s replica1 saludable=False
+ 10,2s replica1 saludable=True
+replica1 REINCORPORADA tras 10.2 s
+--- Estado de replicacion visto desde el primario
+ application_name |   state   | sync_state | sent_lsn  | replay_lsn 
+------------------+-----------+------------+-----------+------------
+ replica2         | streaming | async      | 0/5027620 | 0/5027620
+ replica1         | streaming | async      | 0/5027620 | 0/5027620
+(2 rows)
+--- 30 lecturas tras la recuperacion
+  replica1         15  (50 %)
+  replica2         15  (50 %)
+--- Registros del mecanismo de seleccion
+
+catalogo-1-1  | 2026-11-23T05:20:50.388Z  WARN 1 --- [servicio-catalogo] [   scheduling-1] c.taller.dbrouting.ReplicaHealthMonitor  : [DB-HEALTH] replica1 EXCLUIDA de las lecturas: Connection to replica1:5432 refused. Check that the hostname and 
+port are correct and that the postmaster is accepting TCP/IP connections.
+catalogo-1-1  | 2026-11-23T05:21:12.491Z  INFO 1 --- [servicio-catalogo] [   scheduling-1] c.taller.dbrouting.ReplicaHealthMonitor  : [DB-HEALTH] replica1 REINCORPORADA al grupo de lectura (cluster_name=replica1)
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261123002115
+**********************

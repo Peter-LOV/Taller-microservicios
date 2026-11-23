@@ -26,5 +26,5 @@ $e2 = Invoke-Api -Method POST -Url "$Gw/api/pedidos" -Body @{ productoId = 1; ca
 "HTTP $($e2.Status) -> $($e2.Body | ConvertTo-Json -Compress)"
 
 '--- Trazas de la aplicacion (llamada pedidos -> catalogo)'
-docker compose logs --tail=40 pedidos | Select-String '\[CATALOGO\]'
+docker compose logs --tail=40 pedidos | Select-String '\[CATALOGO\]' | Out-String -Width 250
 Stop-Transcript | Out-Null

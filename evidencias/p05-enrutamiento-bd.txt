@@ -1,0 +1,61 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261123002040
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+--- ESCRITURA (POST /api/catalogo/productos)
+HTTP 201 | nodoBd = primary | instancia = catalogo-2
+--- 30 LECTURAS ordinarias (GET /api/catalogo/productos)
+  replica1         15  (50 %)
+  replica2         15  (50 %)
+--- Estado de los nodos segun la aplicacion (/db/estado)
+
+nombre   rol                  saludable clusterNameReportado
+------   ---                  --------- --------------------
+primary  PRIMARIO (escritura)      True primary             
+replica1 REPLICA (lectura)         True replica1            
+replica2 REPLICA (lectura)         True replica2
+--- Registros de la aplicacion: nodo y SQL de cada operacion
+
+catalogo-1-1  | 2026-11-23T05:20:40.522Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-4] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:40.627Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-7] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:40.756Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-5] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:40.845Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-8] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:40.942Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-6] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:41.032Z  INFO 1 --- [servicio-catalogo] [io-8080-exec-10] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:41.116Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-9] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:41.385Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-2] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:41.503Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-1] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:41.664Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-3] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:42.284Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-4] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica2 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+catalogo-1-1  | 2026-11-23T05:20:42.506Z  INFO 1 --- [servicio-catalogo] [nio-8080-exec-7] com.taller.dbrouting.DbRouter            : [DB] READ          nodo=replica1 sql=SELECT id, nombre, precio, stock FROM productos ORDER BY id
+--- Verificacion en PostgreSQL: conexiones de la aplicacion por nodo (pg_stat_activity)
+[primary]
+servicio-catalogo-catalogo-1|1
+servicio-catalogo-catalogo-2|1
+servicio-pedidos-pedidos-1|1
+[replica1]
+servicio-catalogo-catalogo-1|1
+servicio-catalogo-catalogo-2|1
+servicio-pedidos-pedidos-1|1
+[replica2]
+servicio-catalogo-catalogo-1|1
+servicio-catalogo-catalogo-2|1
+servicio-pedidos-pedidos-1|1
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261123002046
+**********************

@@ -14,10 +14,10 @@ while (((Get-Date) - $t0).TotalSeconds -lt 90) {
 if ($ok) { "replica1 REINCORPORADA tras $([math]::Round(((Get-Date) - $t0).TotalSeconds, 1)) s" } else { 'replica1 NO se reincorporo en 90 s' }
 
 '--- Estado de replicacion visto desde el primario'
-docker compose exec -T primary psql -U $AdminUser -d $Db -c 'SELECT application_name, state, sync_state, sent_lsn, replay_lsn FROM pg_stat_replication;'
+docker compose exec -T primary psql -U $AdminUser -d $Db -c 'SELECT application_name, state, sync_state, sent_lsn, replay_lsn FROM pg_stat_replication;' | Out-String -Width 250
 '--- 30 lecturas tras la recuperacion'
 $l = 1..30 | ForEach-Object { [pscustomobject]@{ Nodo = (Invoke-Api -Url "$Gw/api/catalogo/productos").Body.nodoBd } }
 Show-Dist $l 'Nodo'
 '--- Registros del mecanismo de seleccion'
-docker compose logs --tail=60 catalogo-1 | Select-String 'DB-HEALTH'
+docker compose logs --tail=60 catalogo-1 | Select-String 'DB-HEALTH' | Out-String -Width 250
 Stop-Transcript | Out-Null

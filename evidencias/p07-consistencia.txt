@@ -1,0 +1,41 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261123002345
+Nombre de usuario: SKAY\USER
+Usuario RunAs: SKAY\USER
+Nombre de la configuración: 
+Máquina: SKAY (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\USER\AppData\Local\Programs\Microsoft VS Code\8a14f0cc1b\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 21936
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== PARTE A: secuencia normal ===
+1) POST /api/pedidos            -> HTTP 201, pedido=24, escritura en nodoBd=primary
+2) GET  /api/pedidos/24 (fuerte)   -> HTTP 200, leido de nodoBd=primary
+3) GET  /api/pedidos/24 (eventual) -> HTTP 200, leido de nodoBd=replica1
+
+=== PARTE B: demostracion del problema (se pausa la aplicacion de WAL en las replicas) ===
+Replicas con replay PAUSADO (reciben WAL pero no lo aplican).
+POST /api/pedidos -> pedido=25 creado en primary
+>> ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (404) No se encontró."
+  lectura EVENTUAL -> HTTP 404 en nodoBd=replica2   <-- 404: la replica aun no lo ve
+>> ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (404) No se encontró."
+  lectura EVENTUAL -> HTTP 404 en nodoBd=replica1   <-- 404: la replica aun no lo ve
+>> ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (404) No se encontró."
+  lectura EVENTUAL -> HTTP 404 en nodoBd=replica2   <-- 404: la replica aun no lo ve
+>> ErrorTerminación(Invoke-WebRequest): "Error en el servidor remoto: (404) No se encontró."
+  lectura EVENTUAL -> HTTP 404 en nodoBd=replica1   <-- 404: la replica aun no lo ve
+  lectura FUERTE   -> HTTP 200 en nodoBd=primary   <-- 200: el primario siempre lo ve
+Replay REANUDADO en ambas replicas.
+  lectura EVENTUAL tras reanudar -> HTTP 200 en nodoBd=replica2
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261123002349
+**********************
