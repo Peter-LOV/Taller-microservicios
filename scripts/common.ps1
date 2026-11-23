@@ -21,6 +21,7 @@ function Invoke-Api {
         $st = 0; $json = $null
         if ($_.Exception.Response) { $st = [int]$_.Exception.Response.StatusCode }
         if ($_.ErrorDetails -and $_.ErrorDetails.Message) { try { $json = $_.ErrorDetails.Message | ConvertFrom-Json } catch {} }
+        if (-not $json -and $_.Exception.Response -and $_.Exception.Response.PSObject.Methods['GetResponseStream']) { try { $sr = New-Object IO.StreamReader($_.Exception.Response.GetResponseStream()); $txt = $sr.ReadToEnd(); if ($txt) { $json = $txt | ConvertFrom-Json } } catch {} }
         [pscustomobject]@{ Status = $st; Body = $json; Ms = $sw.ElapsedMilliseconds; Error = $_.Exception.Message }
     }
 }
