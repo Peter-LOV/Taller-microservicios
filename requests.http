@@ -1,0 +1,71 @@
+### Coleccion de solicitudes (VS Code: extension "REST Client" | IntelliJ: soportado de forma nativa)
+@gw = http://localhost:8080
+
+### ---------- Descubrimiento y balanceo (repita varias veces: cambia "instancia") ----------
+GET {{gw}}/api/catalogo/info
+
+###
+GET {{gw}}/api/pedidos/info
+
+### ---------- Catalogo ----------
+# Lectura ordinaria -> replica (ver "nodoBd" en la respuesta)
+GET {{gw}}/api/catalogo/productos
+
+###
+# Lectura eventual (replica) de un producto
+GET {{gw}}/api/catalogo/productos/1
+
+###
+# Lectura CRITICA -> primario
+GET {{gw}}/api/catalogo/productos/1?consistencia=fuerte
+
+###
+# Escritura -> primario
+POST {{gw}}/api/catalogo/productos
+Content-Type: application/json
+
+{ "nombre": "Webcam HD", "precio": 45.50, "stock": 30 }
+
+### ---------- Pedidos (llama a catalogo via Eureka) ----------
+POST {{gw}}/api/pedidos
+Content-Type: application/json
+
+{ "productoId": 1, "cantidad": 2 }
+
+###
+GET {{gw}}/api/pedidos
+
+###
+# Sustituya 1 por el id de un pedido creado
+GET {{gw}}/api/pedidos/1?consistencia=fuerte
+
+### ---------- Errores esperados ----------
+# 404: producto inexistente
+POST {{gw}}/api/pedidos
+Content-Type: application/json
+
+{ "productoId": 9999, "cantidad": 1 }
+
+###
+# 409: stock insuficiente
+POST {{gw}}/api/pedidos
+Content-Type: application/json
+
+{ "productoId": 1, "cantidad": 100000 }
+
+###
+# 400: validacion
+POST {{gw}}/api/pedidos
+Content-Type: application/json
+
+{ "productoId": 1, "cantidad": 0 }
+
+### ---------- Estado de la persistencia segun la aplicacion ----------
+GET {{gw}}/api/catalogo/db/estado
+
+###
+GET {{gw}}/api/pedidos/db/estado
+
+### ---------- Eureka (JSON) ----------
+GET http://localhost:8761/eureka/apps
+Accept: application/json
