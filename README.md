@@ -13,7 +13,7 @@ y **PostgreSQL 17 replicado** (1 primario + 2 réplicas) con enrutamiento propio
 | Amy Tomala Silvestre | C | servicio-pedidos y Spring Cloud Gateway |
 | Skay Alvarado Rodriguez | D | Pruebas P01–P08, evidencias y documentación |
 
-**Video demostrativo:** pendiente <!-- completar: enlace público -->
+**Video demostrativo:** https://drive.google.com/file/d/1Rjw9jjB1EH0xAPIB8GUkbYEat8X5I-Do/view?usp=sharing <!-- completar: enlace público -->
 
 ## 1. Arquitectura
 
